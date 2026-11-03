@@ -7,8 +7,8 @@ use touiteur\message\Touite;
 class TouiteRenderer implements Renderer{
     public function __construct(public Touite $touite){}
 
-    protected function render(int $selector):String{
-        if ($selector === RENDERER::COMPACT){
+    public function render(int $selector):String{
+        if ($selector === Renderer::COMPACT){
             $t = $this->touite;
             $res = "<p>$t->utilisateur</br>$t->texte</p>";
             return $res;
