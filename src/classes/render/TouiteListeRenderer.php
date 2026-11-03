@@ -9,7 +9,7 @@ class TouiteListeRenderer implements Renderer{
 
     protected function render(int $selector):String{
         $res = "";
-        foreach ($this->liste->getListe() as $key => $val){
+        foreach ($this->liste as $key => $val){
             $rend = new TouiteRenderer($val);
             $res .= $rend->render($selector);
         }
